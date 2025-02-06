@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import Stepper, { Step } from "@/components/ui/cards/Stepper";
 import ShinyText from '@/components/ui/text/ShinyText';
 import Link from "next/link";  // Import the Link component for navigation
 
 export default function Home() {
-  const [name, setName] = useState("");
+
 
   return (
     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 sm:px-6 lg:px-8 scale-100 sm:scale-105 md:scale-110 lg:scale-100">

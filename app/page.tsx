@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import ShinyText from '@/components/ui/text/ShinyText'
 import ButtonWrapper from '@/components/ui/button/ButtonWrapper';  // Import the ButtonWrapper component
 
 export default function Home() {
   const targetDate = new Date("2025-03-17T10:00:00").getTime();
 
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -20,7 +20,7 @@ export default function Home() {
       minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
       seconds: Math.floor((difference % (1000 * 60)) / 1000),
     };
-  };
+  }, [targetDate]);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
@@ -29,7 +29,7 @@ export default function Home() {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   return (
     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 sm:px-6 lg:px-8">
@@ -64,6 +64,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
