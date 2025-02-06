@@ -66,6 +66,4 @@ export default function Home() {
 }
 
 
-git config --global user.name "Mohan-Balaji"
 
-git config --global user.email bmohanbalaji1976@gmail.com
