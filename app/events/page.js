@@ -1,12 +1,10 @@
 "use client";
-// import { useState } from "react";
 import Stepper, { Step } from "@/components/ui/cards/Stepper";
 import ShinyText from '@/components/ui/text/ShinyText';
 import Link from "next/link";  // Import the Link component for navigation
+import Image from "next/image";  // Import Image from next/image for optimization
 
 export default function Home() {
-
-
   return (
     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 sm:px-6 lg:px-8 scale-100 sm:scale-105 md:scale-110 lg:scale-100">
       {/* Shiny Text component with opacity and responsiveness */}
@@ -36,17 +34,18 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             Pre-Symposium Preparation
           </h2>
-          <img
+          {/* Replaced <img> with <Image> for better performance */}
+          <Image
+            src="https://img.freepik.com/free-vector/taking-notes-concept-illustration_114360-1114.jpg?t=st=1738872143~exp=1738875743~hmac=4f9173d0a4274a68e3bb483620d66ef79b4586bcc4e85221e70fe253f118f93f&w=826"
+            alt="Step 2"
+            width={826}  // Added width to optimize the image
+            height={200}  // Added height to optimize the image
             style={{
-              height: "200px",
-              width: "100%",
               objectFit: "cover",
               objectPosition: "center -70px",
               borderRadius: "15px",
               marginTop: "1em",
             }}
-            src="https://img.freepik.com/free-vector/taking-notes-concept-illustration_114360-1114.jpg?t=st=1738872143~exp=1738875743~hmac=4f9173d0a4274a68e3bb483620d66ef79b4586bcc4e85221e70fe253f118f93f&w=826"
-            alt="Step 2"
           />
           <p className="mt-4 text-lg sm:text-xl">Agenda Overview</p>
         </Step>
