@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import ShinyText from '@/components/ui/text/ShinyText'
+import ShinyText from '@/components/ui/text/ShinyText';
 import ButtonWrapper from '@/components/ui/button/ButtonWrapper';  // Import the ButtonWrapper component
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
       seconds: Math.floor((difference % (1000 * 60)) / 1000),
     };
-  }, [targetDate]);
+  }, []);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
@@ -33,8 +33,6 @@ export default function Home() {
 
   return (
     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 sm:px-6 lg:px-8">
-      {/* <Navbar /> Add Navbar component here */}
-
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white font-sans tracking-tight">
         <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 text-transparent bg-clip-text text-6xl sm:text-7xl md:text-9xl tracking-widest">
           AVINYA
@@ -42,9 +40,9 @@ export default function Home() {
       </h2>
 
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-6 py-4">
-        <ShinyText text="Coming Soon !" disabled={false} speed={3} className="custom-class" />
+        <ShinyText text="Coming Soon!" disabled={false} speed={3} className="custom-class" />
       </h1>
-      <p className="text-base sm:text-lg mb-6">We're working hard to launch soon. Stay tuned!</p>
+      <p className="text-base sm:text-lg mb-6">We&apos;re working hard to launch soon. Stay tuned!</p>
 
       <div className="flex flex-wrap justify-center gap-4 text-center">
         {["Days", "Hours", "Minutes", "Seconds"].map((label, index) => (
