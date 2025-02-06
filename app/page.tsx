@@ -1,9 +1,10 @@
-'use client'
-import { useState, useEffect, useMemo } from "react";
-import SplashCursor from "@/components/SplashCursor";
+"use client";
+import { useState, useEffect } from "react";
+import ShinyText from '@/components/ui/text/ShinyText'
+import ButtonWrapper from '@/components/ui/button/ButtonWrapper';  // Import the ButtonWrapper component
 
 export default function Home() {
-  const targetDate = useMemo(() => new Date("2025-03-17T10:00:00").getTime(), []);
+  const targetDate = new Date("2025-03-17T10:00:00").getTime();
 
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
@@ -27,19 +28,22 @@ export default function Home() {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
-
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, []);
 
   return (
     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 sm:px-6 lg:px-8">
+      {/* <Navbar /> Add Navbar component here */}
+
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white font-sans tracking-tight">
         <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 text-transparent bg-clip-text text-6xl sm:text-7xl md:text-9xl tracking-widest">
           AVINYA
         </span>
       </h2>
-      <SplashCursor />
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-6">Coming Soon</h1>
+
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-6 py-4">
+        <ShinyText text="Coming Soon !" disabled={false} speed={3} className="custom-class" />
+      </h1>
       <p className="text-base sm:text-lg mb-6">We're working hard to launch soon. Stay tuned!</p>
 
       <div className="flex flex-wrap justify-center gap-4 text-center">
@@ -52,6 +56,16 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      {/* Add the button that redirects to /events */}
+      <div className="mt-6">
+        <ButtonWrapper />
+      </div>
     </div>
   );
 }
+
+
+git config --global user.name "Mohan-Balaji"
+
+git config --global user.email bmohanbalaji1976@gmail.com
