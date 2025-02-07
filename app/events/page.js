@@ -66,7 +66,7 @@ export default function Home() {
       <div className="mt-8 py-16">
         <Link href="/">
           <button className={`
-            justify-center align-middle px-6 py-3 rounded-2xl
+            justify-center align-middle px-6 py-6 rounded-2xl
             bg-black text-white font-semibold hover:bg-white hover:text-black
             transition-all duration-300
             flex items-center gap-2
